@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+<head>
+  <title>Bookaroom</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-red w3-mobile", style="width: 15%"><i class=""></i>Desk Booking</a>
+  <a href="#rooms" class="w3-bar-item w3-button w3-mobile"><%= link_to "Desks", desks_path %></a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile"><%= link_to "MyBookings", "#" %></a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile">
+  	<p class="navbar-text pull-right">
+	  <% if user_signed_in? %>
+			
+			<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+			<%= link_to "Welcome #{current_user.email}!! Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+		  <% else %>
+			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+			  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+		<% end %>
+		</p>
+  </a>
+</div>
+<!-- Header -->
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1532px;">
+  <%= yield %>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer_div">
+  </div>
+</footer>
+
+</body>
+</html>

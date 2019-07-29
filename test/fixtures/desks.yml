@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: MyString
+  desk: MyString
+  from_date: 2019-07-29
+  to_date: 2019-07-29
+  status: false
+  email: MyString
+
+two:
+  user_name: MyString
+  desk: MyString
+  from_date: 2019-07-29
+  to_date: 2019-07-29
+  status: false
+  email: MyString

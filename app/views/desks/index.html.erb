@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<%= link_to 'New Desk', new_desk_path, style: "margin-left: 70px"%> 
+<center>
+  </hr>
+  <h3> Listing Desks</h3>
+  <hr/>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Desk</th>
+        <th>From date</th>
+        <th>To date</th>
+        <th>Status</th>
+        <th>Email</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @desks.each do |desk| %>
+        <tr>
+          <td><%= desk.user_name %></td>
+          <td><%= desk.desk %></td>
+          <td><%= desk.from_date %></td>
+          <td><%= desk.to_date %></td>
+          <td><%= desk.status %></td>
+          <td><%= desk.email %></td>
+          <td><%= link_to 'Show', desk %></td>
+          <td><%= link_to 'Edit', edit_desk_path(desk) %></td>
+          <td><%= link_to 'Destroy', desk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>
+<br>
+
+

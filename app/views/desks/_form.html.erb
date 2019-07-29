@@ -1,0 +1,44 @@
+
+<center>
+  <%= link_to 'Back', desks_path%>
+  <h3>New Desk</h3>
+  <%= form_for(@desk) do |f| %>
+    <% if @desk.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@desk.errors.count, "error") %> prohibited this desk from being saved:</h2>
+
+        <ul>
+        <% @desk.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <td><%= f.label :user_name %></td> 
+        <td><%= f.text_field :user_name %></td>
+      </tr> 
+      <tr>
+        <td><%= f.label :desk %></td> 
+        <td><%= f.select :desk, @slots.map{|slot| slot.name} %></td>
+      </tr> 
+      <tr>
+        <td><%= f.label :from_date %></td> 
+        <td><%= f.date_select :from_date %></td>
+      </tr> 
+      <tr>
+        <td><%= f.label :to_date %></td> 
+        <td><%= f.date_select :to_date %></td>
+      </tr> 
+      <tr>
+        <td><%= f.label :email %></td> 
+        <td><%= f.text_field :email %></td>
+      </tr>      
+    </table>
+    <br/>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</center>
