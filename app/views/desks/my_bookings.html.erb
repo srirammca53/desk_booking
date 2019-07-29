@@ -1,0 +1,35 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<center>
+	<table>
+	  <tr>
+	    <th>Desk</th>
+	    <th>From</th>
+	    <th>TO</th>
+	  </tr>
+	  <tr>
+	  	<% @bookings.each do |booking| %>
+	  	  <td><%= booking.desk %></td>
+	      <td><%= booking.from_date %></td>
+	      <td><%= booking.to_date %></td>
+	      <td><%= link_to "Cancel", cancel_desk_path(booking) %></td>
+	    <% end %>
+	  </tr>
+	</table>
+</center>

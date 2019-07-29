@@ -24,6 +24,17 @@ class DesksController < ApplicationController
 
   def my_bookings
     @bookings = Desk.where(email: current_user.email)
+    respond_to do |format|
+      format.html { render :my_bookings}
+    end
+  end
+
+  def cancel
+    @booking = Desk.find(params[:id])
+    @slot = Slot.where(name: @booking.desk).first
+    @slot.update_attribute(:status, true)
+    @booking.destroy
+    redirect_to desks_path
   end
 
   # POST /desks
@@ -33,6 +44,8 @@ class DesksController < ApplicationController
 
     respond_to do |format|
       if @desk.save
+        @slot = Slot.where(name: @desk.desk).first
+        @slot.update_attribute(:status, false)
         format.html { redirect_to @desk, notice: 'Desk was successfully created.' }
         format.json { render :show, status: :created, location: @desk }
       else

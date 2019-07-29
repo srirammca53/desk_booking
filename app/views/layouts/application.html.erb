@@ -21,7 +21,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div class="w3-bar w3-white w3-large">
   <a href="#" class="w3-bar-item w3-button w3-red w3-mobile", style="width: 15%"><i class=""></i>Desk Booking</a>
   <a href="#rooms" class="w3-bar-item w3-button w3-mobile"><%= link_to "Desks", desks_path %></a>
-  <a href="#about" class="w3-bar-item w3-button w3-mobile"><%= link_to "MyBookings", "#" %></a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile"><%= link_to "MyBookings", my_bookings_desks_path %></a>
   <a href="#contact" class="w3-bar-item w3-button w3-mobile">
   	<p class="navbar-text pull-right">
 	  <% if user_signed_in? %>

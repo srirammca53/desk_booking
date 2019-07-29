@@ -21,6 +21,8 @@ class SlotsController < ApplicationController
   def edit
   end
 
+
+
   # POST /slots
   # POST /slots.json
   def create
