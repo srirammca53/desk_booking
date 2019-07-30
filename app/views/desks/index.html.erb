@@ -31,7 +31,6 @@ tr:nth-child(even) {
         <th>Desk</th>
         <th>From date</th>
         <th>To date</th>
-        <th>Status</th>
         <th>Email</th>
         <th colspan="3">Actions</th>
       </tr>
@@ -44,7 +43,6 @@ tr:nth-child(even) {
           <td><%= desk.desk %></td>
           <td><%= desk.from_date %></td>
           <td><%= desk.to_date %></td>
-          <td><%= desk.status %></td>
           <td><%= desk.email %></td>
           <td><%= link_to 'Show', desk %></td>
           <td><%= link_to 'Edit', edit_desk_path(desk) %></td>

@@ -3,4 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :set_locale
+  
+  private
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
 end

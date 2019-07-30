@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  session:
+    login: "Log in"
+    signup: "Sign up"
+    password: "Password"
+    confirm_password: "Confirm password"
+
+fr:
+  session:
+    login: "s'identifier"
+    signup: "S'inscrire"
+    password: "mot de passe"
+    confirm_password: "Confirmez le mot de passe"
